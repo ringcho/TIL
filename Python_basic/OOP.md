@@ -180,3 +180,26 @@
   - 해당 class 내부에서만 사용가능
   - 하위 클래스 inheritance, 호출 불가능
   - 외부 호출 불가능
+  ### getter/setter methods
+  - 변수에 접근할 수 있는 methods를 별도로 생성
+  - `getter`methods : 변수의 값을 읽는
+    - `@property` 데코레이터
+  - `setter`methods : 변수의 값을 설정하는 method
+    - `@변수.setter` 데코레이터
+  ```python
+    class Person:
+      
+      def __init__(self,age):
+        self._age = age
+      
+      @property
+      def age(self):
+        return self._age
+      
+      @age.setter
+      def age(self, new_age):
+        if new_age <= 19:
+          raise ValueError('Too young to join SSAFY')
+          return
+        self._age = new_age
+  ```
