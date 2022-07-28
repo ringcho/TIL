@@ -28,7 +28,7 @@
   - `'spliter'.join('string')`: spliter가 문자열 사이 (리스트 공백넣기등에 쓰임)
   - 위의 코드에서 보듯 문자열은 불변형 => 새로운 주소를 만듬
     
-    ## List
+## List
     
     List method
 - - `L.append(x)` : 마지막에 x를 추가
@@ -39,35 +39,36 @@
   - `L.count(x)` : x 개수 반환
   - L.sort() : 원본 리스트 정렬 , sorted(L) 원본+정렬된 복사본
     
-    ## Operatior(연산자)
+## Operatior(연산자)
   - in, not in : 포함여부 True, False로 반환
     
-    ## Set
+## Set
     
-    ### Set method
+  ### Set method
   - s.copy():얕은 복사본을 반환
   - s.add(x):항목x가 셋 s에 없다면 추가
   - s.update(*others):여러 값을 추가
   - s.pop(): 랜덤항목 반환 후, 해당항목 제거
   - s.remove(x): 항목 x를 set s에서 삭제 항목이 존재하지 않을 경우 , KeyError
     
-    ## Dictionary
+## Dictionary
 - key는 변경불가
   
   ### Dictionary method
   - d.keys()
   - d.values()
-  - d.get(key[,default]):없으면 None
+  - d.items()
+  - d.get(key[,default]):없으면 None, default 값이 있으면 default 반환 + key 값 있으면 value 반환
   - d['key']:값이없으면 KeyError
   - d.pop(key[,default]):있으면 제거하고 해당 값 반환, 없으면 default, default 없으면 keyError
 
 ## 얕은 복사와 깊은복사
 
-### 할당(assignment)
+  ### 할당(assignment)
 
-#### 대입연산자
+  #### 대입연산자
 
-- 대입연산자를 통한 복사는 해당 객체에 대한 객체 참조를 복사
+    - 대입연산자를 통한 복사는 해당 객체에 대한 객체 참조를 복사
   
   ```python
   original_list =[1,2,3]
@@ -79,37 +80,33 @@
   print(original_list, copy_list)
   ```
 
-#### 얕은 복사 (shallow copy)
-
-- slice 연산자를 통해 해결
-
-```python
+  #### 얕은 복사 (shallow copy)
+  - slice 연산자를 통해 해결
+ ```python
 original_list =[1,2,3]
 copy_list = original_list[:]
 print(copy_list,original_list)
-
-
 copy_list[0]='hello'
 print(original_list, copy_list)
-```
-
-- 주의사항
-
-```python
-a = [1,2,['a','b']]
-b = a[:]
-print(a,b)
-b[2][0] = 0
-print(a,b)
-```
-
-#### 깊은 복사 (deepcopy)
-
+ ```
+- 주의사항 2차원의 경우 불가능
 ```python
 import copy
-a = [1,2,['a','b']]
-b = copy.deepcopy(a)
-print(a,b)
-b[2][0] = 0
-print(a,b)
-```
+ a = [1,2,['a','b']]
+ b = a[:]
+ b = copy.copy(a)
+ print(a,b)
+ b[2][0] = 0
+ print(a,b)
+ ```
+ 
+
+  #### 깊은 복사 (deepcopy)
+ ```python
+    import copy
+    a = [1,2,['a','b']]
+    b = copy.deepcopy(a)
+    print(a,b)
+    b[2][0] = 0
+    print(a,b)
+ ```
