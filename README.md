@@ -6,3 +6,5 @@
 ## 2. Python 
 * [Python basic](./Python_basic/python_basic.md) 
 * [Data structure](./Python_basic/data_structure.md)
+## 3. Web
+* [Web basic](./Web/web.md)
