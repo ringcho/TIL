@@ -33,3 +33,15 @@
 - html 요소는 시작태그와 종료 태그 그리고 태그 사이에 위치한 내용으로 구성
 `<h1>contents</h1>`
 
+### CSS position
+1. relative : 상대위치
+- 자기 자신의 sttic 위치를 기준으로 
+- 레이아웃에서 요소가 차지하는 공간은 static 일때와 동일
+2. absolute : 절대위치
+- 레이아웃에서 공간을 차지하지 않음
+- static이 아닌 부조/조상 요소 기준 부모위치/없으면 `<body>` 위치기준
+- 보통 부모는 relative 자식은 absolute
+3. fixed : 고정 위치
+- 레이아웃에 공간을 차지하지 않음
+- 부모 요소와 관계없이 viewport를 기준으로 이동
+4. sticky : 스크롤에 따라 static->fixed로 변경
