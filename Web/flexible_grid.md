@@ -8,6 +8,15 @@
 
 ![flexbox](../img/flexbox.png)
 
+- 수직정렬
+- 아이템의 너비와 높이 간격을 동일하게 배치 가능
+
+```css
+.flex-container{
+    display: flex;
+}
+```
+
 ### flex:direction
 
 ![flexdirection](../img/flex-drection.png)
