@@ -17,3 +17,8 @@
 - [Web basic](./Web/web.md)
 - [Bootstrap](./Web/Bootstrap.md)
 - [flexible_grid](./Web/flexible_grid.md)
+
+## 4. Algorithm
+
+- [Algorithm Basic](./algorithm/algorithm_basic.md)
+- [Arrat&Sort](./algorithm/array%26sort.md)
