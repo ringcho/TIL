@@ -85,3 +85,42 @@ def kmp(text, pattern):
 
     return -1
 ```
+
+### boyer-mooer
+
+![boyermooer](../img/boyer-mooer.png)
+
+- 패턴의 오른쪽 끝에 있는 문자가 불일치 하고, 문자가 패턴 내에 존재하지 않는 경우, 이동 거리는 패턴의 길이
+
+```python
+def skip_table(pattern):
+    M = len(pattern)  # 패턴의 길이
+
+    table = dict()
+    for i in range(M-1): # 마지막 자리는 패턴을 통해 비교하여 자리를 바꾸기 때문에 굳이 계산하지 않아도 됨
+        table[pattern[i]] = M - i - 1
+
+    return table
+
+def boyermooer(text,pattern):
+    skip_table1 = skip_table(pattern)
+    M = len(pattern)
+
+    i = 0  #text index
+    while i <= len(text) - M:
+        j = M - 1  # 뒤에서 부터 비교
+        k = i + (M-1)  # 비교를 시작할 위치 (현재위치 + M번째 index)
+
+        while j >= 0 and pattern[j] == text[k]:  # 비교할 j 가 남아있고, text와 pattern이 일치한다면 그 다음 앞의 글자를 비교하기 위해
+            j -= 1
+            k -= 1
+
+        if j == -1:  # 찾았다.
+            return i
+
+        else:
+            # 일치 하지 않는다면 i를 비교 시작할 위치를 skip table에서 가져온다.
+            i += skip_table1.get(text[k], M)
+
+    return -1
+```
