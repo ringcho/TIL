@@ -29,3 +29,79 @@ def calsum2(n): # 3번
     3. 메모리 사용량 : 얼마나 적은 메모리
     4. 단순성 : 얼마나 단순
     5. 최적성 : 더 이상 개선할 여지가 없는가
+
+## Recursion 재귀
+
+- 자기 자신을 호출하여 순환 수행
+
+```python
+def factorial(n):
+    if n == 1:
+        return 1
+    else:
+        return n*factorial(n-1)
+def fibo(n):
+    if n < 2:
+        return n
+    else:
+        return fibo(n-1) + fibo(n-2)
+```
+
+- 해당 방식과 같은 피보나치 수열의 호출은 O(2^n^)의 시간 복잡도를 가진다.
+
+## Memoization
+
+- 프로그램을 실행할 때 이전에 계산한 값을 메모리에 저장해서 매번 다시 계산하지 않도록 하여 전체적인 실행속도를 빠르게 함
+- dynamic programming의 핵심
+- Memoization을 사용하면 실행시간을 :theta:(n)으로 줄일 수 있다.
+
+```python
+def fibo(n):
+    memo = [0,1]
+    if n >= 2:
+        memo.append(fibo(n-1)+fibo(n-2))
+    return memo[n]
+```
+
+## DP(Dynamic Programming)
+
+- Greedy algorithm 과 같이 최적화 문제를 해결
+- 입력크기 작은것 -> 큰 크기의 부분 문제로 해결
+
+```python
+# fibonachi with dp
+def fibo(n):
+    f = [0,1]
+
+    for i in range(2, n+1):
+        f.append(f[i-1] + f[i-2])
+    return f
+```
+
+### DFS(depth first search)
+
+- 비선형구조인 그래프의 모든 자료를 빠짐없이 검색하는 법
+
+```
+시작 정점 v를 결정하여 방문한다.
+정점 v에 인접한 정점 중에서
+    1. 방문하지 않은 정점 w가 있으면, 정점 v를 스택에 push하고 정점 w를 방문한다.
+    2. 방문하지 않은 정점이 없으면, 탐색의 방향을 바꾸기 위해서 스택을 pop하여 받은 가장 마지막 방문정점을 v로 하여 다시 반복한다.
+스택이 공백이 될 때까지 반복한다.
+
+visited[], stack[] initialization
+DFS(v)
+    #시작점 v 방문
+    vistied[v] == True
+    while:
+        if (v의 인접 node중 거치지 않은 node w가 있으면)
+            push v
+            v = w   # w에 방문
+            vistied[w]
+        else
+            if 스택이 비어 있지 않으면
+                v = pop(stack)
+            else
+                break
+return
+```
