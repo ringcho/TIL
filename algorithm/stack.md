@@ -30,5 +30,5 @@ def pop(item):
 ## 스택의 응용: function call
 
 - 가장 마지막에 호출된 함수가 가장 먼저 실행을 완료하고 복귀하는 후입선출 구조
-
+- dfs의 재귀
 ![functioncall](../img/funtion%20call.png)

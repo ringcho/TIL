@@ -42,7 +42,7 @@ print()
 
     - [Bubble Sort](#bubble-sort)
     - [Counting Sort](#counting-sort)
-    - Selection Sort
+    - [Selection Sort](#selection-sort)
     - Quick Sort
     - Insertion Sort
     - Merge Sort
@@ -82,6 +82,7 @@ def CountingSort(A, B, k)
         C[A[i]] -= 1 # C의 개수를 줄인 후
         B[C[A[i]]] = A[i] # B에 해당 원소를 배열
 ```
+
 ### Selection Sort
 
     - 주어진 리스트에서 최솟값을 찾는다
