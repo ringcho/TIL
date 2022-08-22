@@ -131,3 +131,48 @@ dfs(v):
             dfs(w)
 
 ```
+
+### Backtracking
+
+- 해를 찾는 도중에 막히면 되돌아가서 다시 해를 찾아가는 기법
+- optimization 문제와 decision 문제를 해결
+- node의 promising(유망)을 확인 후, 해답의 가능성이 없으면 고려하지 않는다.(pruning 가지치기)
+
+#### Backtracking vs dfs
+
+- 어떤 노드에서 출발하는 경로가 더이상 정답으로 향하지 않는다면, 경로를 따라가지 않음으로 시도의 횟수를 줄임(Prunning 가지치기)
+- dfs는 모든 경로 탐색, backtracking은 불필요한 경로 차단
+- backtracking 역시 최악의 경우에는 Exponential Time을 요한다.
+
+```python
+'''
+powerset with backtracking
+'''
+def powerset(i, N):
+    if i == N:
+        for i in range(N):
+            if bit[i]:
+                print(A[i], end=' ')
+        print()
+    else:
+        bit[i] = 1                      # A[i] 가 부분집합에 포함
+        powerset(i+1, N)
+        bit[i] = 0                      # A[i] 가 부분집합에 미포함
+        powerset(i+1, N)
+A = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+bit = [0] * 10
+'''
+permutation with backtracking
+'''
+def npr(i, N):
+    if i == N:
+        print(P)
+    else:
+        for j in range(i, N):    #P[i]에 들어갈 숫자 P[j]결정
+            P[i], P[j] = P[j], P[i]
+            npr(i+1, N)
+            P[i], P[j] = P[j], P[i]
+
+P = [1, 2, 3]
+npr(0, 3)
+```

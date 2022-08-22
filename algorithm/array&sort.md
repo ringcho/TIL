@@ -4,24 +4,24 @@
 
 ### Array의 필요성
 
-    - 여러개의 변수가 필요할 때, 하나의 선언으로 여러개의 변수 지정 가능
+- 여러개의 변수가 필요할 때, 하나의 선언으로 여러개의 변수 지정 가능
 
 ### 2차원 Array에 대한 접근
 
-    - 열 우선 순회
-    - 행 우선 순회
-    - 지그재그 순회
-    - 델타를 이용한 2차원 배열 탐색
+- 열 우선 순회
+- 행 우선 순회
+- 지그재그 순회
+- 델타를 이용한 2차원 배열 탐색
 
 ### 비트 연산자
 
-    - &: 비트 단위로 and 연산
-    - |: 비트 단위로 or 연산
-    - <<: 피연산자의 비트 열을 왼쪽으로 이동
-    > 1 100 10000 이므로 1<<3 은 1<<2보다 2배 더큼
-    - >>: 피연산자의 비트 열을 오른쪽으로 이동
-    > 2배 작아짐
-    big endian & little endian
+- &: 비트 단위로 and 연산
+- |: 비트 단위로 or 연산
+- <<: 피연산자의 비트 열을 왼쪽으로 이동
+> 1 100 10000 이므로 1<<3 은 1<<2보다 2배 더큼
+- >>: 피연산자의 비트 열을 오른쪽으로 이동
+> 2배 작아짐
+big endian & little endian
 
 ```python
 # N 개의 항목을 가진 list에 대해 부분집합 생성
@@ -36,21 +36,21 @@ print()
 
 ## Sort
 
-    - ascending, descending에 따라 Array를 재배열 하는 것
+- ascending, descending에 따라 Array를 재배열 하는 것
 
 ### Kinds of Sort
 
-    - [Bubble Sort](#bubble-sort)
-    - [Counting Sort](#counting-sort)
-    - [Selection Sort](#selection-sort)
-    - Quick Sort
-    - Insertion Sort
-    - Merge Sort
+- [Bubble Sort](#bubble-sort)
+- [Counting Sort](#counting-sort)
+- [Selection Sort](#selection-sort)
+- Quick Sort
+- Insertion Sort
+- Merge Sort
 
 ### Bubble sort
 
-    - 인접한 두개의 원소를 비교하며 자리를 교환하는 방식
-    - O(n^2^)
+- 인접한 두개의 원소를 비교하며 자리를 교환하는 방식
+- O(n^2^)
 
 ```python
 def BubbleSort(arr, N): #정렬할 list, 원소 수
@@ -63,9 +63,9 @@ def BubbleSort(arr, N): #정렬할 list, 원소 수
 
 ### Counting Sort
 
-    - 항목들의 순서를 결정하기 위해 집합에 각 항목이 몇 개씩 있는지 세는 작업을 하여, 선형 시간에 정렬
-    - 정수나 정수로 표현할 수 있는 자료에 대해서만 적용가능
-    - O(n+k)
+- 항목들의 순서를 결정하기 위해 집합에 각 항목이 몇 개씩 있는지 세는 작업을 하여, 선형 시간에 정렬
+- 정수나 정수로 표현할 수 있는 자료에 대해서만 적용가능
+- O(n+k)
 
 ```python
 def CountingSort(A, B, k)
@@ -85,11 +85,11 @@ def CountingSort(A, B, k)
 
 ### Selection Sort
 
-    - 주어진 리스트에서 최솟값을 찾는다
-    - 제일 앞의 값과 교환한다.
-    - 다시 찾는다.
-    - 정렬되지 않은 리스트중 제일 앞의 값과 교환한다.
-    - O(N^2^)
+- 주어진 리스트에서 최솟값을 찾는다
+- 제일 앞의 값과 교환한다.
+- 다시 찾는다.
+- 정렬되지 않은 리스트중 제일 앞의 값과 교환한다.
+- O(N^2^)
 
 ```python
 def select(arr, k):
