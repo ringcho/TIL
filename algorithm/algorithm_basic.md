@@ -91,7 +91,7 @@ def fibo(n):
     return f
 ```
 
-### DFS(depth first search)
+## DFS(depth first search)
 
 - 비선형구조인 그래프의 모든 자료를 빠짐없이 검색하는 법
 
@@ -138,7 +138,7 @@ dfs(v):
 - optimization 문제와 decision 문제를 해결
 - node의 promising(유망)을 확인 후, 해답의 가능성이 없으면 고려하지 않는다.(pruning 가지치기)
 
-#### Backtracking vs dfs
+### Backtracking vs dfs
 
 - 어떤 노드에서 출발하는 경로가 더이상 정답으로 향하지 않는다면, 경로를 따라가지 않음으로 시도의 횟수를 줄임(Prunning 가지치기)
 - dfs는 모든 경로 탐색, backtracking은 불필요한 경로 차단
@@ -175,4 +175,28 @@ def npr(i, N):
 
 P = [1, 2, 3]
 npr(0, 3)
+```
+
+## BFS(Breadth First Search)
+
+- bfs는 탐색 시작점의 인접한 정점들을 먼저 모두 차례로 방문한 후에, 방문했던 정점을 시작점으로 하여 다시 인접한 정점들을 방문
+
+```python
+'''
+pseudo code
+'''
+def BFS(v, G): #v: 탐색 지작점 G: 그래프
+    visitied = [0]*len(G)
+    Q = [v]
+    while Q:
+        v = Q.popleft()
+        '''
+        내가 원하는 일
+        '''
+        if v == nodeK:
+            return 1
+        for w in adjList[v]:
+            if visited[w] == 0:
+                q.append(w)
+                visited[w] = visited[v] + 1
 ```
