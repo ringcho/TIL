@@ -13,6 +13,11 @@
 - WHATWG,W3C
 - [CanIuse](https://caniuse.com)
 
+## Static vs Dynamic
+
+- static: 같은 상황에서 모든 사용자에게 동일한 정보 표시
+- dynamic: 사용자의 요청에 따라 웹페이지를 변경
+
 ## HTML
 
 - Hyper Text Markup Language
