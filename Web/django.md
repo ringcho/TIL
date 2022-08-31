@@ -198,3 +198,9 @@ render의 세번째 인자로 {'key':value}와 같이 딕셔너리 형태로 넘
 `{% if %}{% endif %}`
 
 ## Template inheritance
+
+
+
+## Model
+
+## CRUD
