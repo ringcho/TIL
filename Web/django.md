@@ -4,7 +4,7 @@
 - dynamic web page를 만들 수 있게 도와줌
 - web은 client-server 구조를 기반으로 동작: client는 sever에 requests를 보내고, server는 client에게 response를 준다.
 
-![request_response](../img/)
+![request_response](../img/request_response.PNG)
 
 > google에 접속한다는 것은
 > 1. client는 구글 server에 google.html을 달라고 request
@@ -199,8 +199,141 @@ render의 세번째 인자로 {'key':value}와 같이 딕셔너리 형태로 넘
 
 ## Template inheritance
 
+- 코드의 재사용성을 위해
+- skeleton Template 사용
+- 하위 템플릿에 `{% extends '' %}`: 자식템플릿이 부모 템플릿을 확장
+- `{% block content %} { % endblock content % }`
+- 최상단의 template에 위치하기 위해
 
+
+```python
+# settings.py
+'DIRS' : [BASE_DIR/'templates']
+```
+
+## Sending and Retrieving form data
+
+- 웹은 클라이언트 - 서버 아키텍처 사용
+![clientserver](../img/client-server.PNG)
+
+### HTML `<form>` element
+
+- 데이터가 전송되는 방법을 정의
+- 웹에서 정보를 입력하는 방식(text, button, submit)을 제공하고, 사용자로부터 할당된 데이터를 서버로 전송하는 역할
+- `action="{ url 'app_name:oneofurls'}", method ="GET or POST"`
+- action
+  - 입력데이터가 전송될 URL을 지정
+  - 데이터를 어디로 보낼 것 인지 지정, 반드시 유효한 URL
+  - 지정하지 않으면 form이 있는 페이지의 URL
+- method
+  - 데이터를 어떻게 보낼것인지
+  - HTTP request methods를 지정
+  - HTML form 데이터는 GET or POST만으로 전송 가능
+  - GET: READ, POST:CREATE,UPDATE,DELETE
+  - POST를 통해 전달할 경우 form 태그 내부에 CSRF tokken 필요
+  - GET의 경우 입력데이터를 URL을 통해 전달
+  - Query String Parameters
+  - https://host:post/path?key=value&key=value
+
+### HTML `<input>` element
+
+- 사용자로부터 데이터를 입력
+- "type"에 따라 동작 방식이 달라짐, MDN 참고, 기본은 'text'
+- "name"
+> form을 통해 제출 했을 때 파라미터의 key
+
+## Variable routing
+
+- url 주소를 변수로 사용
+- url 일부를 변수로 지정하여 view 함수의 인자로 할당
+- 변수 값에 따라 하나의 path()에 여러 페이지를 연결
+- ` path(hello/<variables>, views.hello)`와 같은 형태로 정의
+- 정의한 이름과, view함수에서 인자로 사용하는 값은 같아야함
 
 ## Model
 
+- Django에서 데이터를 구조화하고 조작하기 위한 모델
+- 각각의 모델은 하나의 데이터베이스 테이블에 매핑(mapping)
+
+### Migration
+
+- 모델을 통해 정의한 데이터를 db에 옮기는 법
+- `python manage.py makemigrations`
+- `python manage.py migrate`
+
+### ORM(Object-Relational-Mapping)
+
+- 객체 지향 프로그래밍 언어를 사용하여 호환되지 않는 유형의 시스템 간에 데이터를 변환하는 프로그래밍 기술
+- python 과 SQL 사이의 번역을 담당
+
+### QuerySet API
+
+- Database API
+  - Django가 ORM을 제공함에 따라 DB를 조작하는 방법을 제공
+
+![databaseapi](../img/database_api.PNG)
+
 ## CRUD
+
+- Create/Read/Update/Delete
+- 대부분의 컴퓨터 소프트웨어가 가지는 기본적인 데이터 처리기능 4가지
+
+### CREATE
+
+```python
+#1
+article = Article()
+article.title = 'first'
+article.content = 'iloveyou'
+article.save()
+#2
+article = Article(title='second', content='iloveyou')
+article.save()
+#3 use Queryset API
+#따로 인스턴스를 만들 필요가 없다.
+Article.objects.create(title='third', content='iluvu')
+```
+
+### READ
+
+```python
+#all()
+articles = Article.objects.all()
+#get()
+# 고유성을 보장하는 조회, id, pk를 사용
+article = Article.objects.get(pk=1)
+# filter()
+# Field lookup에 대한 공식문서 참조
+```
+```django
+<!-- all() -->
+{% for article in articles%}
+{{article.title}}
+{% endfor %}
+```
+
+### UPDATE
+
+```python
+article = Article.objects.get(pk=1)
+article.title = 'byebye'
+article.save()
+```
+
+### DELETE
+```python
+article = Article.objects.get(pk=1)
+article.delete()
+```
+
+## ADMIN
+
+- `python manage.py createsuperuser`: 를 통해 admin 계정 생성
+- 모델을 admin에 등록
+- 
+```python
+# articles/admin.py
+from django.contrib import admin
+from . import models
+admin.site.register(models.Article)
+```
