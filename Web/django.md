@@ -39,6 +39,7 @@
 
 ```
 python -m venv venv
+source venv/script/activate
 pip install django==3.2
 pip freeze > requirements.txt
 django-admin startproject config .
@@ -47,6 +48,7 @@ python manage.py runserver
 
 - terminal 안에서
 - venv를 통해 가상환경생성
+- 가상환경실행
 - 장고 버젼 설치
 - freeze를 통해 package 목록 생성
 - 프로젝트 생성

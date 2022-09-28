@@ -128,6 +128,15 @@ def postorder(n):
 - key(왼쪽)<key(root node)<key(오른쪽)
 
 - inorder traversal을 통해 오름차순으로 정렬된 값을 얻을 수 있다.
+-
+
+```python
+def inorder(n):
+	if n<=N:
+		inorder(2*n)
+		visit(n)
+		inorder(2*n+1)
+```
 
 
 
