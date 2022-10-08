@@ -139,5 +139,12 @@ CREATE TABLE table_name(
 -- Rename a table
 ALTER TABLE table_name RENAME TO new_table_name;
 
--- Re
+-- Rename a column
+ALTER TABLE table_name RENAME COLUMN column_name TO new_column;
+
+-- ADD a new column to a table
+ALTER TABLE table_name ADD COLUMN column_definition;
+
+-- DELETE a column
+ALTER TABLE table_name DROP COLUMN column_name;
 ```
