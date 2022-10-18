@@ -1,7 +1,6 @@
 # TIL
 
 - Today I Learned
-- 응애, 나 애기 개발자
 
 ## 1. Git
 
