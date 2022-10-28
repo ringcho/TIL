@@ -8,6 +8,9 @@
 - `cd`: 위치변경
   - 절대경로 : `C:/Users/smc96/Desktop`
   - 상대경로 : `./`현재폴더 `../`상위폴더
+- `echo {content} > {filename}`: file name에 content 덮어쓰기
+- `echo {content} >> {filename}`: file name에 content 추가
+- `cat {filename}`: filename 열기
 - `start`: 파일열기
 - `rm`: 파일삭제
   - -`rf` :폴더삭제
