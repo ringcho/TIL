@@ -136,3 +136,8 @@ export default {
 #### style
 
 * CSS가 작성되며 컴포넌트의 스타일을 담당
+
+
+### emit 
+
+* component에 eventlistener `v-on == @`이 붙어 있으면, emit event로 생각 따라서, 실제 해당 component가 인식을 하게 하려면 `@click.native`와 같이 `.native`를 붙여주면 해결
