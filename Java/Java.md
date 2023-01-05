@@ -23,3 +23,10 @@
 ## class
 
 - CamelCase
+
+## InputOutput
+
+```java
+Scanner scanner = new Scanner(System.in);
+int num = scanner.nextInt();
+```

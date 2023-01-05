@@ -105,3 +105,11 @@ str = "test";
 - 프로그램에서 사용하는 숫자, 문자, 논리값을 뜻함
 - literal은 constant pool에 있음
 - 정수 리터럴은 int 실수는 double로 저장
+- 정수가 범위를 넘어나는 경우 L, float으로 쓰고 싶으면 f 식별자를 마지막에 추가
+
+## 형변환(type conversion)
+- 서로 다른 자료형 간에 연산 수행을 위해 하나의 자료형으로 통일하는 것
+- 묵시적 형 변환(explicit type conversion, 자동 형 변환)과 명시적 형 변환(implicit type conversion)이 있음
+- 바이트 크기가 작은 자료형에서 큰 자료형으로 형 변환은 자동으로
+- 덜 정밀한 자료에서 더 정밀한 자료형으로 형 변환은 자동
+
