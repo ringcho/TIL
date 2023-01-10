@@ -89,3 +89,13 @@ do{
 ```
 
 ## for
+
+```java
+for (초기화식; 조건식; 증감식){
+    수행문;
+}
+int num;
+for (num=1; num<=5; num++){
+    System.out.println(num);
+}
+```
