@@ -1,5 +1,28 @@
 # Database
 
+## E-R Model(Entity-Relationship Model)
+
+<table>
+<th>E-R Model</th>
+<th>관계형 모델</th>
+<th>Database</th>
+<tr>
+<td>Entity</td>
+<td>Relation</td>
+<td>Table</td>
+</tr>
+<tr>
+<td>Instance</td>
+<td>Tuple</td>
+<td>Row</td>
+</tr>
+<tr>
+<td>Attribute</td>
+<td>Attribute</td>
+<td>Column</td>
+</tr>
+</table>
+
 ## Database
 
 - 프로그래밍 언어를 사용해 작동
@@ -21,12 +44,12 @@
 - 테이블의 구조
 - 데이터베이스에서 자료의 구조, 표현 방법, 관계 등 전반적인 명세를 기술한 것
 
-|column|datatype|
-|------|--------|
-|  id  |   INT  |
-| name |  TEXT  |
-|address|  TEXT |
-|age    | INT   |
+| column  | datatype |
+| ------- | -------- |
+| id      | INT      |
+| name    | TEXT     |
+| address | TEXT     |
+| age     | INT      |
 
 테이블(Table)
 
@@ -52,11 +75,11 @@
 2. DML : Data Manipulation Language
 3. DCL : Data Control Language
 
-|분류|개념|SQL 키워드|
-|----|----|----|
-|DDL - 데이터 정의 언어|RDB(schema, table)을 정의(생성, 삭제, 수정)하기 위한 명령어|CREATE, DROP, ALTER|
-|DML - 데이터 조작 언어|데이터를 조작(추가,조회,변경,삭제)라기 위한 명령어|INSERT, SELECT, UPDATE, DELETE|
-|DCL - 데이터 제어 언어|데이터의 보안, 수행제어, 사용자 권한 부여 등을 정의하기 위한 명령어|GRANT, REVOKE, COMMIT, ROLLBACK|
+| 분류                   | 개념                                                                | SQL 키워드                      |
+| ---------------------- | ------------------------------------------------------------------- | ------------------------------- |
+| DDL - 데이터 정의 언어 | RDB(schema, table)을 정의(생성, 삭제, 수정)하기 위한 명령어         | CREATE, DROP, ALTER             |
+| DML - 데이터 조작 언어 | 데이터를 조작(추가,조회,변경,삭제)라기 위한 명령어                  | INSERT, SELECT, UPDATE, DELETE  |
+| DCL - 데이터 제어 언어 | 데이터의 보안, 수행제어, 사용자 권한 부여 등을 정의하기 위한 명령어 | GRANT, REVOKE, COMMIT, ROLLBACK |
 
 ### SQL syntax
 
